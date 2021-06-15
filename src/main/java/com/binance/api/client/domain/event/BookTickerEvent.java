@@ -3,6 +3,7 @@ package com.binance.api.client.domain.event;
 import com.binance.api.client.constant.BinanceApiConstants;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -19,23 +20,23 @@ public class BookTickerEvent {
     private String symbol;
 
     @JsonProperty("b")
-    private String bidPrice;
+    private BigDecimal bidPrice;
 
     @JsonProperty("B")
-    private String bidQuantity;
+    private BigDecimal bidQuantity;
 
     @JsonProperty("a")
-    private String askPrice;
+    private BigDecimal askPrice;
 
     @JsonProperty("A")
-    private String askQuantity;
+    private BigDecimal askQuantity;
 
     public BookTickerEvent() {
         super();
     }
 
-    public BookTickerEvent(long updateId, String symbol, String bidPrice, String bidQuantity, String askPrice,
-                           String askQuantity) {
+    public BookTickerEvent(long updateId, String symbol, BigDecimal bidPrice, BigDecimal bidQuantity, BigDecimal askPrice,
+        BigDecimal askQuantity) {
         super();
         this.updateId = updateId;
         this.symbol = symbol;
@@ -45,7 +46,7 @@ public class BookTickerEvent {
         this.askQuantity = askQuantity;
     }
 
-    public BookTickerEvent(String symbol, String bidPrice, String bidQuantity, String askPrice, String askQuantity) {
+    public BookTickerEvent(String symbol, BigDecimal bidPrice, BigDecimal bidQuantity, BigDecimal askPrice, BigDecimal askQuantity) {
         super();
         this.symbol = symbol;
         this.bidPrice = bidPrice;
@@ -70,35 +71,35 @@ public class BookTickerEvent {
         this.symbol = symbol;
     }
 
-    public String getBidPrice() {
+    public BigDecimal getBidPrice() {
         return bidPrice;
     }
 
-    public void setBidPrice(String bidPrice) {
+    public void setBidPrice(BigDecimal bidPrice) {
         this.bidPrice = bidPrice;
     }
 
-    public String getBidQuantity() {
+    public BigDecimal getBidQuantity() {
         return bidQuantity;
     }
 
-    public void setBidQuantity(String bidQuantity) {
+    public void setBidQuantity(BigDecimal bidQuantity) {
         this.bidQuantity = bidQuantity;
     }
 
-    public String getAskPrice() {
+    public BigDecimal getAskPrice() {
         return askPrice;
     }
 
-    public void setAskPrice(String askPrice) {
+    public void setAskPrice(BigDecimal askPrice) {
         this.askPrice = askPrice;
     }
 
-    public String getAskQuantity() {
+    public BigDecimal getAskQuantity() {
         return askQuantity;
     }
 
-    public void setAskQuantity(String askQuantity) {
+    public void setAskQuantity(BigDecimal askQuantity) {
         this.askQuantity = askQuantity;
     }
 

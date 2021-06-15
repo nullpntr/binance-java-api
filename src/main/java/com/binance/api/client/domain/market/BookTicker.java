@@ -2,6 +2,7 @@ package com.binance.api.client.domain.market;
 
 import com.binance.api.client.constant.BinanceApiConstants;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.math.BigDecimal;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -18,22 +19,22 @@ public class BookTicker {
   /**
    * Bid price.
    */
-  private String bidPrice;
+  private BigDecimal bidPrice;
 
   /**
    * Bid quantity
    */
-  private String bidQty;
+  private BigDecimal bidQty;
 
   /**
    * Ask price.
    */
-  private String askPrice;
+  private BigDecimal askPrice;
 
   /**
    * Ask quantity.
    */
-  private String askQty;
+  private BigDecimal askQty;
 
   public String getSymbol() {
     return symbol;
@@ -43,35 +44,35 @@ public class BookTicker {
     this.symbol = symbol;
   }
 
-  public String getBidPrice() {
+  public BigDecimal getBidPrice() {
     return bidPrice;
   }
 
-  public void setBidPrice(String bidPrice) {
+  public void setBidPrice(BigDecimal bidPrice) {
     this.bidPrice = bidPrice;
   }
 
-  public String getBidQty() {
+  public BigDecimal getBidQty() {
     return bidQty;
   }
 
-  public void setBidQty(String bidQty) {
+  public void setBidQty(BigDecimal bidQty) {
     this.bidQty = bidQty;
   }
 
-  public String getAskPrice() {
+  public BigDecimal getAskPrice() {
     return askPrice;
   }
 
-  public void setAskPrice(String askPrice) {
+  public void setAskPrice(BigDecimal askPrice) {
     this.askPrice = askPrice;
   }
 
-  public String getAskQty() {
+  public BigDecimal getAskQty() {
     return askQty;
   }
 
-  public void setAskQty(String askQty) {
+  public void setAskQty(BigDecimal askQty) {
     this.askQty = askQty;
   }
 

@@ -4,6 +4,7 @@ import com.binance.api.client.constant.BinanceApiConstants;
 import com.binance.api.client.domain.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -50,13 +51,13 @@ public class OrderTradeUpdateEvent {
    * Original quantity in the order.
    */
   @JsonProperty("q")
-  private String originalQuantity;
+  private BigDecimal originalQuantity;
 
   /**
    * Price.
    */
   @JsonProperty("p")
-  private String price;
+  private BigDecimal price;
 
   /**
    * Type of execution.
@@ -86,25 +87,25 @@ public class OrderTradeUpdateEvent {
    * Quantity of the last filled trade.
    */
   @JsonProperty("l")
-  private String quantityLastFilledTrade;
+  private BigDecimal quantityLastFilledTrade;
 
   /**
    * Accumulated quantity of filled trades on this order.
    */
   @JsonProperty("z")
-  private String accumulatedQuantity;
+  private BigDecimal accumulatedQuantity;
 
   /**
    * Price of last filled trade.
    */
   @JsonProperty("L")
-  private String priceOfLastFilledTrade;
+  private BigDecimal priceOfLastFilledTrade;
 
   /**
    * Commission.
    */
   @JsonProperty("n")
-  private String commission;
+  private BigDecimal commission;
 
   /**
    * Asset on which commission is taken
@@ -134,19 +135,19 @@ public class OrderTradeUpdateEvent {
    * Cumulative quote asset transacted quantity.
    */
   @JsonProperty("Z")
-  private String cumulativeQuoteQty;
+  private BigDecimal cumulativeQuoteQty;
 
   /**
    * Last quote asset transacted quantity (i.e. lastPrice * lastQty).
    */
   @JsonProperty("Y")
-  private String lastQuoteQty;
+  private BigDecimal lastQuoteQty;
 
   /**
    * Quote Order Qty.
    */
   @JsonProperty("Q")
-  private String quoteOrderQty;
+  private BigDecimal quoteOrderQty;
 
   public String getEventType() {
     return eventType;
@@ -204,19 +205,19 @@ public class OrderTradeUpdateEvent {
     this.timeInForce = timeInForce;
   }
 
-  public String getOriginalQuantity() {
+  public BigDecimal getOriginalQuantity() {
     return originalQuantity;
   }
 
-  public void setOriginalQuantity(String originalQuantity) {
+  public void setOriginalQuantity(BigDecimal originalQuantity) {
     this.originalQuantity = originalQuantity;
   }
 
-  public String getPrice() {
+  public BigDecimal getPrice() {
     return price;
   }
 
-  public void setPrice(String price) {
+  public void setPrice(BigDecimal price) {
     this.price = price;
   }
 
@@ -252,35 +253,35 @@ public class OrderTradeUpdateEvent {
     this.orderId = orderId;
   }
 
-  public String getQuantityLastFilledTrade() {
+  public BigDecimal getQuantityLastFilledTrade() {
     return quantityLastFilledTrade;
   }
 
-  public void setQuantityLastFilledTrade(String quantityLastFilledTrade) {
+  public void setQuantityLastFilledTrade(BigDecimal quantityLastFilledTrade) {
     this.quantityLastFilledTrade = quantityLastFilledTrade;
   }
 
-  public String getAccumulatedQuantity() {
+  public BigDecimal getAccumulatedQuantity() {
     return accumulatedQuantity;
   }
 
-  public void setAccumulatedQuantity(String accumulatedQuantity) {
+  public void setAccumulatedQuantity(BigDecimal accumulatedQuantity) {
     this.accumulatedQuantity = accumulatedQuantity;
   }
 
-  public String getPriceOfLastFilledTrade() {
+  public BigDecimal getPriceOfLastFilledTrade() {
     return priceOfLastFilledTrade;
   }
 
-  public void setPriceOfLastFilledTrade(String priceOfLastFilledTrade) {
+  public void setPriceOfLastFilledTrade(BigDecimal priceOfLastFilledTrade) {
     this.priceOfLastFilledTrade = priceOfLastFilledTrade;
   }
 
-  public String getCommission() {
+  public BigDecimal getCommission() {
     return commission;
   }
 
-  public void setCommission(String commission) {
+  public void setCommission(BigDecimal commission) {
     this.commission = commission;
   }
 
@@ -316,27 +317,27 @@ public class OrderTradeUpdateEvent {
     this.orderCreationTime = orderCreationTime;
   }
 
-  public String getCumulativeQuoteQty() {
+  public BigDecimal getCumulativeQuoteQty() {
     return cumulativeQuoteQty;
   }
 
-  public void setCumulativeQuoteQty(String cumulativeQuoteQty) {
+  public void setCumulativeQuoteQty(BigDecimal cumulativeQuoteQty) {
     this.cumulativeQuoteQty = cumulativeQuoteQty;
   }
 
-  public String getLastQuoteQty() {
+  public BigDecimal getLastQuoteQty() {
     return lastQuoteQty;
   }
 
-  public void setLastQuoteQty(String lastQuoteQty) {
+  public void setLastQuoteQty(BigDecimal lastQuoteQty) {
     this.lastQuoteQty = lastQuoteQty;
   }
 
-  public String getQuoteOrderQty() {
+  public BigDecimal getQuoteOrderQty() {
     return quoteOrderQty;
   }
 
-  public void setQuoteOrderQty(String quoteOrderQty) {
+  public void setQuoteOrderQty(BigDecimal quoteOrderQty) {
     this.quoteOrderQty = quoteOrderQty;
   }
 

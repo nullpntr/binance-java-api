@@ -3,6 +3,7 @@ package com.binance.api.client.domain.market;
 import com.binance.api.client.constant.BinanceApiConstants;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -15,10 +16,10 @@ public class AggTrade {
   private long aggregatedTradeId;
 
   @JsonProperty("p")
-  private String price;
+  private BigDecimal price;
 
   @JsonProperty("q")
-  private String quantity;
+  private BigDecimal quantity;
 
   @JsonProperty("f")
   private long firstBreakdownTradeId;
@@ -40,19 +41,19 @@ public class AggTrade {
     this.aggregatedTradeId = aggregatedTradeId;
   }
 
-  public String getPrice() {
+  public BigDecimal getPrice() {
     return price;
   }
 
-  public void setPrice(String price) {
+  public void setPrice(BigDecimal price) {
     this.price = price;
   }
 
-  public String getQuantity() {
+  public BigDecimal getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(String quantity) {
+  public void setQuantity(BigDecimal quantity) {
     this.quantity = quantity;
   }
 
