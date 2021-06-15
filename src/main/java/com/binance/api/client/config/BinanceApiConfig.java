@@ -79,4 +79,9 @@ public class BinanceApiConfig {
     public static String getStreamTestNetBaseUrl() {
         return String.format("wss://%s", TESTNET_DOMAIN);
     }
+
+		public static String getFuturesStreamApiBaseUrl() {
+				return String.format("wss://fstream.%s/ws", getBaseDomain());
+		}
+
 }

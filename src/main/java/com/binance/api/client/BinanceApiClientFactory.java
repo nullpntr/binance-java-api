@@ -135,4 +135,9 @@ public class BinanceApiClientFactory {
   public BinanceApiSwapRestClient newSwapRestClient() {
     return new BinanceApiSwapRestClientImpl(apiKey, secret);
   }
+
+  public BinanceFuturesApiWebSocketClient newFuturesWebSocketClient() {
+    return new BinanceFuturesApiWebSocketClientImpl(getSharedClient());
+  }
+
 }
