@@ -1,8 +1,16 @@
 package com.binance.api.client;
 
-import com.binance.api.client.impl.*;
-import com.binance.api.client.config.BinanceApiConfig;
 import static com.binance.api.client.impl.BinanceApiServiceGenerator.getSharedClient;
+
+import com.binance.api.client.config.BinanceApiConfig;
+import com.binance.api.client.impl.BinanceApiAsyncMarginRestClientImpl;
+import com.binance.api.client.impl.BinanceApiAsyncRestClientImpl;
+import com.binance.api.client.impl.BinanceApiFutureRestClientImpl;
+import com.binance.api.client.impl.BinanceApiMarginRestClientImpl;
+import com.binance.api.client.impl.BinanceApiRestClientImpl;
+import com.binance.api.client.impl.BinanceApiSwapRestClientImpl;
+import com.binance.api.client.impl.BinanceApiWebSocketClientImpl;
+import com.binance.api.client.impl.BinanceFuturesApiWebSocketClientImpl;
 
 /**
  * A factory for creating BinanceApi client objects.
@@ -138,6 +146,10 @@ public class BinanceApiClientFactory {
 
   public BinanceFuturesApiWebSocketClient newFuturesWebSocketClient() {
     return new BinanceFuturesApiWebSocketClientImpl(getSharedClient());
+  }
+
+  public BinanceApiFutureRestClient newFuturesRestClient() {
+    return new BinanceApiFutureRestClientImpl(apiKey, secret);
   }
 
 }
