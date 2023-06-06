@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.WebSocket;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.Closeable;
 import java.util.Arrays;
@@ -109,7 +110,7 @@ public class BinanceApiWebSocketClientImpl implements BinanceApiWebSocketClient,
             final int code = 1000;
             listener.onClosing(webSocket, code, null);
             webSocket.close(code, null);
-            listener.onClosed(webSocket, code, null);
+            listener.onClosed(webSocket, code, StringUtils.EMPTY);
         };
     }
 }

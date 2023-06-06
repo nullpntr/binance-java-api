@@ -1,5 +1,7 @@
 package com.binance.api.client;
 
+import okhttp3.WebSocket;
+
 /**
  * BinanceApiCallback is a functional interface used together with the BinanceApiAsyncClient to provide a non-blocking REST client.
  *
@@ -21,4 +23,5 @@ public interface BinanceApiCallback<T> {
      * @param cause the cause of the failure
      */
     default void onFailure(Throwable cause) {}
+    default void onClosed(WebSocket webSocket, int code, String reason) {}
 }
