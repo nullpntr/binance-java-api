@@ -23,5 +23,5 @@ public interface BinanceApiCallback<T> {
      * @param cause the cause of the failure
      */
     default void onFailure(Throwable cause) {}
-    default void onClosed(WebSocket webSocket, int code, String reason) {}
+    default void onClosing(WebSocket webSocket, int code, String reason) {}
 }
