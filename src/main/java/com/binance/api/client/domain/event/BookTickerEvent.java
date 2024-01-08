@@ -13,9 +13,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BookTickerEvent {
 
-    @JsonProperty("u")
-    private long updateId;
-
     @JsonProperty("s")
     private String symbol;
 
@@ -35,32 +32,14 @@ public class BookTickerEvent {
         super();
     }
 
-    public BookTickerEvent(long updateId, String symbol, BigDecimal bidPrice, BigDecimal bidQuantity, BigDecimal askPrice,
+    public BookTickerEvent( String symbol, BigDecimal bidPrice, BigDecimal bidQuantity, BigDecimal askPrice,
         BigDecimal askQuantity) {
         super();
-        this.updateId = updateId;
         this.symbol = symbol;
         this.bidPrice = bidPrice;
         this.bidQuantity = bidQuantity;
         this.askPrice = askPrice;
         this.askQuantity = askQuantity;
-    }
-
-    public BookTickerEvent(String symbol, BigDecimal bidPrice, BigDecimal bidQuantity, BigDecimal askPrice, BigDecimal askQuantity) {
-        super();
-        this.symbol = symbol;
-        this.bidPrice = bidPrice;
-        this.bidQuantity = bidQuantity;
-        this.askPrice = askPrice;
-        this.askQuantity = askQuantity;
-    }
-
-    public long getUpdateId() {
-        return updateId;
-    }
-
-    public void setUpdateId(long updateId) {
-        this.updateId = updateId;
     }
 
     public String getSymbol() {
@@ -106,8 +85,7 @@ public class BookTickerEvent {
     @Override
     public String toString() {
         return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE).append("eventType", "BookTicker")
-                .append("updateId", updateId).append("symbol", symbol).append("bidPrice", bidPrice)
-                .append("bidQuantity", bidQuantity).append("askPrice", askPrice).append("askQuantity", askQuantity)
-                .toString();
+                .append("symbol", symbol).append("bidPrice", bidPrice).append("bidQuantity", bidQuantity)
+                .append("askPrice", askPrice).append("askQuantity", askQuantity).toString();
     }
 }
